@@ -1,0 +1,30 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Distribution / packaging
+dist/
+build/
+*.egg-info/
+
+# Virtual environment
+venv/
+env/
+.env/
+
+# IDE
+.vscode/
+.idea/
+
+# Temporary files
+temp/
+*.tmp
+
+# Model checkpoints
+*.pth
+*.h5
+*.ckpt
+
+# Logs
+*.log 
