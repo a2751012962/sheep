@@ -15,15 +15,15 @@
 ```
 sheep/
 ├── data/                  # 数据存储
-│   ├── dataset/          # 处理后的数据集
-│   │   ├── train/       # 训练集样本
-│   │   ├── val/         # 验证集样本
-│   │   └── test/        # 测试集样本
-│   └── temp/            # 临时文件
+│   └── dataset/          # 处理后的数据集
+│       ├── train/        # 训练数据（80%）
+│       ├── val/          # 验证数据（10%）
+│       └── test/         # 测试数据（10%）
 ├── docs/                 # 项目文档
 ├── images/              # 图片资源
-│   ├── screenshots/     # 游戏截图
-│   └── templates/       # 卡片模板
+│   ├── screenshots/     # 游戏原始截图
+│   ├── cards/          # 单个卡片原始图片
+│   └── templates/      # 处理后的标准模板
 ├── image_recognition/   # 图像识别模块
 │   ├── card_detector.py # 卡片检测器
 │   ├── cnn_model.py     # CNN模型定义
@@ -49,6 +49,18 @@ sheep/
 └── requirements.txt     # 依赖包列表
 ```
 
+## 数据组织说明
+
+### 图片资源 (`images/`)
+- `screenshots/`: 存放游戏截图，用于提取卡片模板
+- `cards/`: 存放单个卡片的原始图片，作为基准样本
+- `templates/`: 存放经过处理的标准模板，按类别分类（如 red_panda, toucan 等）
+
+### 数据集 (`data/dataset/`)
+- `train/`: 训练集，包含约80%的数据样本
+- `val/`: 验证集，包含约10%的数据样本
+- `test/`: 测试集，包含约10%的数据样本
+
 ## 安装
 
 1. 克隆仓库：
@@ -64,20 +76,31 @@ pip install -r requirements.txt
 
 ## 使用方法
 
-1. 提取卡牌模板：
-```bash
-python tools/template_extractor.py images/screenshots/game.png images/templates
-```
+1. 准备数据：
+   ```bash
+   # 将游戏截图放入 images/screenshots/
+   # 将单个卡片图片放入 images/cards/
+   ```
 
-2. 训练模型：
-```bash
-python tools/train_model.py
-```
+2. 提取模板：
+   ```bash
+   python tools/template_extractor.py images/cards/* images/templates
+   ```
 
-3. 运行解题器：
-```bash
-python main.py
-```
+3. 准备数据集：
+   ```bash
+   python tools/utils/prepare_dataset.py
+   ```
+
+4. 训练模型：
+   ```bash
+   python tools/train_model.py
+   ```
+
+5. 运行解题器：
+   ```bash
+   python main.py
+   ```
 
 ## 技术栈
 
