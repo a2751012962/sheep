@@ -1,7 +1,14 @@
-<<<<<<< HEAD
 # 羊了个羊自动解题器
 
 这是一个用于自动解决羊了个羊游戏的工具。它使用计算机视觉和深度学习技术来识别游戏中的卡牌，并使用决策算法来找到最优解。
+
+## 功能特点
+
+- 🎯 自动识别游戏卡牌
+- 🤖 基于深度学习的卡牌分类
+- 🎮 智能游戏策略生成
+- 📊 实时游戏状态分析
+- 🔄 自动化游戏操作
 
 ## 项目结构
 
@@ -42,34 +49,12 @@ sheep/
 └── requirements.txt     # 依赖包列表
 ```
 
-## 需要清理的文件
-
-以下文件功能重复或已过时，需要整理或删除：
-
-1. tools/ 目录下的重复文件：
-   - process_screenshots.py (合并到 card_detector.py)
-   - process_cards.py (合并到 card_detector.py)
-   - save_cards.py (可删除)
-   - train_classifier.py (合并到 train_model.py)
-   - process_all.py (可删除)
-   - template_labeler.py (移动到 tools/utils/)
-   - card_classifier.py (合并到 cnn_model.py)
-   - simple_cropper.py (合并到 card_detector.py)
-   - test_image.py (移动到 tests/)
-   - image_cropper.py (合并到 card_detector.py)
-   - test_window.py (移动到 tests/)
-
-2. 需要创建的新目录：
-   - tests/ : 存放测试文件
-   - tools/utils/ : 存放辅助工具
-   - docs/ : 存放文档
-
 ## 安装
 
 1. 克隆仓库：
 ```bash
-git clone https://github.com/yourusername/sheep-solver.git
-cd sheep-solver
+git clone https://github.com/a2751012962/sheep.git
+cd sheep
 ```
 
 2. 安装依赖：
@@ -94,21 +79,26 @@ python tools/train_model.py
 python main.py
 ```
 
-## 依赖项
+## 技术栈
 
-- Python 3.8+
-- OpenCV
-- PyTorch
-- NumPy
-- Pillow
+- 🐍 Python 3.8+
+- 🖼️ OpenCV - 图像处理和卡牌检测
+- 🧠 PyTorch - 深度学习模型训练
+- 📊 NumPy - 数值计算和数据处理
+- 🎨 Pillow - 图像处理和增强
+
+## 开发指南
+
+1. Fork 本仓库
+2. 创建您的特性分支 (`git checkout -b feature/AmazingFeature`)
+3. 提交您的更改 (`git commit -m 'Add some AmazingFeature'`)
+4. 推送到分支 (`git push origin feature/AmazingFeature`)
+5. 打开一个 Pull Request
 
 ## 贡献
 
-欢迎提交 Pull Request 或创建 Issue。
+欢迎提交 Pull Request 或创建 Issue。任何形式的贡献都将被感激。
 
 ## 许可证
 
-MIT License 
-=======
-# sheep
->>>>>>> d1b411e347c1dbf5d2d30dbf0828bd283efb0dec
+MIT License - 查看 [LICENSE](LICENSE) 文件了解更多细节 
