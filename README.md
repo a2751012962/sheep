@@ -125,3 +125,27 @@ pip install -r requirements.txt
 ## 许可证
 
 MIT License - 查看 [LICENSE](LICENSE) 文件了解更多细节 
+
+## 卡片类型
+
+项目支持以下18种卡片类型：
+1. red_panda (红熊猫)
+2. toucan (犀鸟)
+3. chameleon (变色龙)
+4. donut (甜甜圈)
+5. flamingo (火烈鸟)
+6. panda (熊猫)
+7. palm_tree (棕榈树)
+8. monkey (猴子)
+9. rino (犀牛)
+10. green_butterfly (绿蝴蝶)
+11. frog (青蛙)
+12. flower (花)
+13. elephant (大象)
+14. blue_butterfly (蓝蝴蝶)
+15. black_bear (黑熊)
+16. sloth (树懒)
+17. snail (蜗牛)
+18. tree (树)
+
+每种卡片类型的模板图片存放在 `images/templates/` 对应的子目录中。 
